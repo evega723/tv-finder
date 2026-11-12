@@ -1,0 +1,99 @@
+
+body {
+    background-color: black;
+  font-family: "Nabla", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  font-variation-settings:
+    "EDPT" 100,
+    "EHLT" 12;
+}
+
+label {
+  font-size: 30px;
+}
+
+
+
+#show-details h2 {
+    border-top-color: white;
+    border-bottom: white;
+    border-top-width: 5px;
+    border-bottom-width: 5px; ;
+    border-bottom-style: solid;
+    border-top-style:solid;
+  font-size: 36px;
+}
+
+#show-details img {
+  display: block;
+  margin: 0 auto;
+  padding: 6px;
+  background-color: #171717;
+  border: 12px ridge #555;
+  border-radius: 12px;
+  box-shadow: 0 0 0 4px #222, 0 8px 18px rgba(0, 0, 0, 0.6);
+  max-width: 92%;
+  min-width: 60%;
+}
+
+
+h1{
+    font-size: 70pt;
+    text-align: center;
+    margin: auto;
+    background-color: rgb(38, 6, 69);
+    border-color: gold;
+    border-width: 7px;
+    border-style: inset;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  body {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 52pt;
+  }
+
+  label {
+    font-size: 26px;
+  }
+
+  #show-details h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 599px) {
+  body {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 34pt;
+    border-width: 5px;
+  }
+
+  label {
+    font-size: 22px;
+  }
+
+  #show-select {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  #show-details h2 {
+    font-size: 28px;
+  }
+
+  #show-details img {
+    max-width: 100%;
+    padding: 4px;
+    border-width: 8px;
+  }
+}

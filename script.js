@@ -38,7 +38,7 @@ async function loadShows() {
 
 //2nd API request
 async function loadShowDetails(id) {
-  const url = `https://api.tvmaze.com/showz/${id}`;
+  const url = `https://api.tvmaze.com/shows/${id}`;
 
   setMessage("Loading show details...");
 
