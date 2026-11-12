@@ -43,7 +43,7 @@ async function loadShowDetails(id) {
     }
 
     const show = await res.json();
-    console.log(show);
+    displayDetails(show);
   } catch (error) {
     console.error(error);
   }
@@ -75,6 +75,47 @@ function fillDropdown(shows) {
     option.textContent = show.name;
     showSelect.appendChild(option);
   }
+}
+
+
+
+//Display the show images and descriptions
+
+function displayDetails(show) {
+  showDetails.replaceChildren();
+
+  const heading = document.createElement("h2");
+  heading.textContent = show.name;
+  showDetails.appendChild(heading);
+
+  if (show.image) {
+    const poster = document.createElement("img");
+    poster.src = show.image.medium;
+    poster.alt = `Poster for ${show.name}`;
+    showDetails.appendChild(poster);
+
+  } 
+  
+  else {
+    const noPoster = document.createElement("p");
+
+    noPoster.textContent = "No poster available";
+    showDetails.appendChild(noPoster);
+  }
+
+  const summary = document.createElement("div");
+
+  summary.innerHTML = show.summary || "No summary available";
+  showDetails.appendChild(summary);
+
+  const genres = show.genres.join(", ") || "Not listed";
+  const premiered = show.premiered || "Unknown";
+  const status = show.status || "Unknown";
+  const rating = show.rating?.average ?? "Not rated";
+  const information = document.createElement("p");
+
+  information.textContent = `Genres: ${genres} | Premiered: ${premiered} | Status: ${status} | Rating: ${rating}`;
+  showDetails.appendChild(information);
 }
 
 loadShows();
